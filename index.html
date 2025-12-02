@@ -1,22 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
- <head> <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/4.1.0/turn.min.js"></script>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Catálogo Flipbook PWA</title>
     
     <link rel="manifest" href="/manifest.json" />
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/4.1.0/turn.min.js"></script>
-
-    </head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Catálogo Flipbook PWA</title>
-    
-    <link rel="manifest" href="/manifest.json" />
 
     <style>
         /* CSS básico para ver as páginas */
@@ -43,36 +34,8 @@
     </div>
 
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const flipBook = new StPageFlip(
-            document.getElementById("flipbook"),
-            {
-                width: 600,
-                height: 800,
-                showCover: true // Para garantir que a capa vire
-            }
-        );
-        // Renderiza o livro na tela
-        flipBook.loadFromHtml(document.querySelectorAll(".page"));
-    });
-    </script>
-    
-    <script>
-    // Este código registra o sw.js para que o PWA funcione
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js')
-          .then(registration => {
-            console.log('Service Worker registrado com sucesso:', registration.scope);
-          })
-          .catch(err => {
-            console.log('Falha no registro do Service Worker:', err);
-          });
-      });
-    }
-    </script>
-<script>
     // 1. Inicializa o Turn.js e transforma o div em livro
+    // Este bloco só é executado quando a página está pronta
     $(document).ready(function() {
         $('#flipbook').turn({
             width: 800,
@@ -95,7 +58,5 @@
     }
     </script>
 
-</body>
-</html>
 </body>
 </html>
