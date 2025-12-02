@@ -2,8 +2,8 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ebook Estilo Leitor Digital PWA</title>
+    <meta name="viewport" content="width=device-width, initial-width=1.0">
+    <title>Do Céu ao Coração: Ebook Cristão PWA</title>
     
     <link rel="manifest" href="/manifest.json" />
 
@@ -32,59 +32,261 @@
         }
 
         /* Estilos de Conteúdo */
-        h1, h3 {
+        h1 {
+            font-family: sans-serif;
+            color: #4CAF50; /* Destaque verde */
+            border-bottom: 3px solid #eee;
+            padding-bottom: 20px;
+            text-align: center;
+            font-size: 2.5em;
+        }
+        
+        h3 {
             font-family: sans-serif;
             color: #333;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+
+        h4 {
+            color: #4CAF50;
+            margin-top: 25px;
         }
 
         p {
             margin-bottom: 1.5em;
-            text-align: justify; /* Justifica o texto como em um livro */
+            text-align: justify;
             font-size: 1.1em;
+        }
+        
+        blockquote {
+            background-color: #f0fdf4; /* Verde bem claro para citações */
+            border-left: 5px solid #4CAF50;
+            margin: 1.5em 0;
+            padding: 10px 20px;
+            font-style: italic;
+            color: #388e3c;
         }
 
         .cover {
             background-color: #4CAF50;
             color: white;
             padding: 80px 0;
-            margin: -50px -50px 50px -50px; /* Extende para a borda do contêiner */
-            font-size: 2.5em;
+            margin: -50px -50px 50px -50px;
+            font-size: 2em;
+            line-height: 1.2;
             text-align: center;
             border-radius: 8px 8px 0 0;
         }
-        
-        /* Estilos para o PWA no modo offline */
-        /* Para simular a navegação em um ebook de verdade, o usuário rola a página */
-        .page { 
+        .page-section { 
             margin-bottom: 30px; 
             padding: 20px 0;
             border-top: 1px dashed #eee;
+        }
+
+        .list-box {
+            background-color: #f4f4f4;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .list-box ol, .list-box ul {
+            padding-left: 20px;
+        }
+        .list-box li {
+            margin-bottom: 10px;
+            text-align: left;
+        }
+        .final-placeholder {
+            text-align: center;
+            padding: 40px;
+            border: 2px dashed #ccc;
+            margin-top: 50px;
         }
     </style>
 </head>
 <body>
 
     <div id="ebook-reader">
-        <div class="cover">SEU EBOOK PROFISSIONAL</div>
+        <div class="cover">DO CÉU AO CORAÇÃO: 7 PASSOS INFALÍVEIS<br>para edificar um relacionamento Cristão</div>
         
-        <div class="page page-1">
-            <h3>PÁGINA 1: Introdução</h3>
-            <p>Este layout foi desenhado para ser o mais confortável possível para a leitura, simulando a experiência de um leitor de ebook (como um Kindle ou Kobo). A fonte, o espaçamento entre linhas e a largura do texto foram otimizados.</p>
-            <p>Seu PWA continua funcional e, ao ser instalado no celular, terá uma aparência limpa e focada no conteúdo, como um aplicativo de leitura.</p>
+        <div class="page-section">
+            <h3>O Caminho para um Relacionamento Cristão Saudável</h3>
+            <p>Quando pensamos em relacionamentos, é comum nos depararmos com perguntas e desafios: "Como encontrar a pessoa certa?", "Como seguir os princípios cristãos num namoro?" ou até: "Como construir um relacionamento que honre a Deus e seja duradouro?".</p>
+            <p>No mundo em que vivemos, onde tantas ideias sobre amor e relacionamento são distorcidas, seguir o caminho que a Bíblia nos apresenta pode parecer difícil, às vezes até solitário. Mas a verdade é que **Deus se importa profundamente com seus relacionamentos**. Ele deseja que você experimente o amor da forma mais pura e verdadeira, aquela que reflete o amor Dele por nós. Este livro foi escrito pensando nisso.</p>
+            <p>Com base nas Escrituras e em conselhos de autores cristãos, reunimos passos práticos e reflexões profundas para te ajudar a construir um namoro que tenha **Cristo no centro**, que seja puro, saudável e alicerçado nos valores do Reino de Deus. Cada capítulo aborda uma área essencial para o sucesso de um relacionamento cristão: desde a oração por orientação divina até a importância da comunicação honesta, passando por princípios bíblicos que guiam o namoro e o respeito pela pureza. Nosso desejo é que, ao mergulhar nestas páginas, você seja inspirado e fortalecido na sua jornada rumo a um relacionamento que honre a Deus.</p>
         </div>
 
-        <div class="page page-2">
-            <h3>PÁGINA 2: O Novo Visual</h3>
-            <p>Ajustamos o CSS para que a tipografia e o layout fossem priorizados, resolvendo a falha dos códigos externos. Agora, o foco é na entrega do seu conteúdo de forma elegante.</p>
-            <p>Você pode adicionar todo o seu texto aqui. O conteúdo simplesmente fluirá para baixo, como um site moderno e focado.</p>
+        <div class="page-section">
+            <h3>Capítulo 1: Ore por Orientação Divina</h3>
+            <p>Quando falamos sobre namoro e relacionamentos, uma das maiores dúvidas é: Como saber se essa pessoa é a certa para mim? A verdade é que, em um mundo cheio de opiniões e distrações, a resposta nem sempre é clara. E é aí que entra a oração.</p>
+            
+            <blockquote>“Não andem ansiosos por coisa alguma, mas em tudo, pela oração e súplicas, e com ação de graças, apresentem seus pedidos a Deus.” – Filipenses 4:6</blockquote>
+
+            <p>Vamos ver como isso funciona na prática e por que a oração é fundamental para quem busca orientação em seus relacionamentos. Entregando suas ansiedades a Deus. A primeira coisa que o versículo nos ensina é não andar ansiosos. E sejamos sinceros, a ansiedade é real quando se trata de relacionamentos. "Será que essa pessoa é pra mim?" ou "E se eu nunca encontrar alguém?" são dúvidas comuns. Mas Deus nos chama para entregar essas preocupações a Ele.</p>
+            <p>A prática de orar sobre seu relacionamento é, em essência, confiar a Deus algo que você não pode controlar. Em outras palavras, você está dizendo: "Senhor, eu não sei o que o futuro me reserva, mas eu confio que o Senhor sabe. Por favor, guie meus passos e me mostre o que é melhor." A oração transforma nossa perspectiva. Em vez de ficarmos presos na ansiedade, confiamos que Deus está nos guiando, mesmo que ainda não entendamos.</p>
+
+            <h4>Como Orar na Prática?</h4>
+            <div class="list-box">
+                <p>Aqui estão algumas formas simples de orar por orientação:</p>
+                <ol>
+                    <li>**Peça Clareza:** "Senhor, mostre-me se esse relacionamento é o que o Senhor deseja para mim. Dê-me clareza para seguir conforme a Sua vontade."</li>
+                    <li>**Peça Transformação Pessoal:** "Deus, enquanto eu espero, transforme meu coração. Faça-me mais paciente e amoroso, para que eu esteja preparado para um relacionamento saudável."</li>
+                    <li>**Peça Paz:** "Senhor, se esse é o relacionamento certo, por favor, me dê Sua paz que excede todo entendimento."</li>
+                </ol>
+            </div>
+            
+            <h4>Como Ouvir a Resposta de Deus?</h4>
+            <p>Saber que Deus está respondendo pode parecer difícil, mas existem formas práticas de perceber a resposta:</p>
+            <div class="list-box">
+                <ol>
+                    <li>**A Palavra de Deus (Bíblia):** Muitas vezes, a resposta virá por meio das Escrituras. Leia a Bíblia, e você encontrará orientação direta.</li>
+                    <li>**Conselho de Pessoas Espirituais:** Deus também usa amigos, líderes e pastores para nos guiar. Preste atenção aos conselhos que estão em sintonia com a Palavra de Deus.</li>
+                    <li>**Paz Interior:** Quando algo está alinhado com a vontade de Deus, você sentirá paz. Se há inquietação constante, pode ser um alerta.</li>
+                </ol>
+            </div>
+            
+            <h4>Entenda que a Resposta Pode Ser "Espere"</h4>
+            <p>Às vezes, a resposta de Deus é: "Espere". Isso pode ser difícil, mas é uma oportunidade de crescer na fé. Durante esse tempo de espera, continue orando e buscando a Deus. Ele está trabalhando nos bastidores para preparar o melhor para você.</p>
+            
+            <p><strong>Conclusão:</strong> Na próxima vez que se sentir ansioso ou incerto sobre seu relacionamento, ore. Não precisa ser uma oração elaborada, apenas sincera. Confie que Deus vai responder no tempo certo e te guiar para um relacionamento abençoado e segundo Sua vontade.</p>
         </div>
 
-        <div class="page page-back">
-            <h3>FIM DO LIVRO</h3>
-            <p>Obrigado pela leitura!</p>
+        <div class="page-section">
+            <h3>Capítulo 2: Estabeleça Princípios Bíblicos para o Namoro</h3>
+            <p>Entrar em um relacionamento é um grande passo, e quando você é cristão, esse passo carrega um significado ainda mais profundo. Você não está só escolhendo alguém para compartilhar momentos, mas também alguém que estará ao seu lado na caminhada espiritual. A Bíblia nos alerta em 2 Coríntios 6:14:</p>
+            
+            <blockquote>"Não se ponham em jugo desigual com descrentes, pois o que têm em comum a justiça e a maldade? Ou que comunhão pode ter a luz com as trevas?" – 2 Coríntios 6:14</blockquote>
+
+            <p>Vamos ser realistas: o versículo pode soar um pouco pesado, mas ele nos dá uma direção clara sobre o que Deus espera dos nossos relacionamentos. Aqui, o ponto central é encontrar alguém que compartilhe valores e princípios semelhantes aos seus. Vamos mergulhar nisso?</p>
+
+            <h4>1. O que é o "Jugo Desigual"?</h4>
+            <p>"Jugo" era uma peça de madeira que unia dois animais para arar a terra. Se um animal fosse mais forte que o outro, a carga ficava desigual, e o trabalho ficava difícil. No contexto dos relacionamentos, o **"jugo desigual"** fala sobre estar unido a alguém que não compartilha os mesmos valores e a mesma fé. Não quer dizer que essa pessoa é má, mas significa que, no longo prazo, essa diferença pode gerar conflitos, especialmente quando falamos de questões importantes, como fé, família e propósito de vida.</p>
+
+            <h4>2. Por Que É Importante Compartilhar a Mesma Fé?</h4>
+            <p>Namorar alguém que compartilha a mesma fé não significa que vocês vão concordar em tudo, mas significa que vocês têm uma base sólida e comum sobre a qual construir a vida. A fé é o alicerce. Quando os dois estão alinhados espiritualmente, é mais fácil enfrentar os desafios da vida juntos, porque vocês têm a mesma fonte de força e orientação: Deus.</p>
+
+            <h4>3. Princípios Bíblicos Essenciais para um Namoro Cristão</h4>
+            <p>O que estamos buscando aqui são guias, **valores que ajudem a manter o relacionamento saudável e dentro da vontade de Deus.**</p>
+            <div class="list-box">
+                <ul>
+                    <li>**Honrar a Deus em Primeiro Lugar:** O relacionamento de vocês deve honrar a Deus. Vocês precisam sempre perguntar: "O que estamos fazendo juntos está agradando a Deus?"
+                    <p><em>“Portanto, quer comam, quer bebam ou façam qualquer outra coisa, façam tudo para a glória de Deus.ˮ – 1 Coríntios 10:31</em></p></li>
+                    
+                    <li>**Buscar a Pureza:** Mantenha a pureza nos seus relacionamentos. Isso não é só sobre evitar a intimidade física antes do casamento, mas também sobre manter a mente e o coração puros.
+                    <p><em>“Fujam da imoralidade sexual. Todos os outros pecados que alguém comete são fora do corpo, mas quem peca sexualmente, peca contra o seu próprio corpo.ˮ – 1 Coríntios 6:18</em></p></li>
+                    
+                    <li>**Construir uma Amizade Verdadeira:** O namoro cristão deve ser baseado em uma amizade profunda. A amizade sincera é o que vai sustentar o relacionamento em momentos difíceis.
+                    <p><em>“O amigo ama em todos os momentos; é um irmão na adversidade.ˮ – Provérbios 17:17</em></p></li>
+                    
+                    <li>**Caminhar Juntos na Fé:** Vocês devem se encorajar a orar juntos, ler a Bíblia e servir a Deus. Isso fortalecerá o relacionamento.
+                    <p><em>“Busquem, pois, em primeiro lugar o Reino de Deus e a sua justiça, e todas essas coisas lhes serão acrescentadas.ˮ – Mateus 6:33</em></p></li>
+                </ul>
+            </div>
+
+            <h4>4. O Que Fazer Se Já Estiver em um Jugo Desigual?</h4>
+            <p>Agora, talvez você esteja lendo isso e pensando: "Mas eu já estou namorando alguém que não compartilha minha fé. E agora?" Essa é uma situação delicada, e não existe uma única resposta certa para todos os casos. O que você deve fazer primeiro é orar. Ore para que Deus te dê sabedoria para lidar com essa situação. Converse com seu parceiro(a) sobre a importância da sua fé e veja se há abertura para ele crescer nesse aspecto também. Se a outra pessoa respeitar e quiser aprender mais sobre sua fé, isso pode ser um caminho. Porém, se você perceber que essa diferença está gerando tensão e afastando você de Deus, talvez seja necessário reavaliar o relacionamento. Deus nunca vai te pedir para escolher entre Ele e alguém, e um relacionamento saudável vai sempre te aproximar d'Ele, não o contrário.</p>
+
+            <p><strong>Conclusão:</strong> Estabelecer princípios bíblicos para o namoro é essencial para garantir que o relacionamento que você está construindo seja saudável e esteja de acordo com a vontade de Deus. Esses princípios não são regras para te limitar, mas sim direções amorosas para te proteger e te guiar para um relacionamento que seja uma bênção, tanto para você quanto para a outra pessoa. Lembre-se: um namoro que agrada a Deus não é perfeito, mas é moldado pelo compromisso de buscar a vontade d'Ele acima de tudo. Quando você coloca Deus no centro, o relacionamento ganha propósito, paz e direção.</p>
         </div>
+
+        <div class="page-section">
+            <h3>Capítulo 3: Compare as Qualidades com as de um Cônjuge Bíblico</h3>
+            <p>Quando a gente começa um namoro, é fácil ficar deslumbrado com a aparência, o charme, ou até os interesses em comum. Mas, quando o objetivo é construir um relacionamento sério, principalmente com a visão cristã, é importante olhar além disso. E é aqui que entra a Palavra de Deus para nos guiar sobre as qualidades que realmente importam em um cônjuge. Em Efésios 5:25-28, vemos uma direção clara para os maridos, mas esses princípios se aplicam a ambos os lados:</p>
+            
+            <blockquote>"Maridos, amem suas esposas, assim como Cristo amou a igreja e entregou-se a si mesmo por ela... Da mesma forma, os maridos devem amar suas esposas como amam seus próprios corpos. Quem ama a sua esposa, ama a si mesmo." – Efésios 5:25-28</blockquote>
+            
+            <h4>1. O Amor Sacrificial como Cristo Amou a Igreja</h4>
+            <p>Vamos começar com o ponto principal que Paulo nos dá: amor sacrificial. Aquele amor que não é só baseado no que a pessoa pode te oferecer, mas um amor que está disposto a se entregar. Cristo amou a igreja ao ponto de dar a vida por ela, e é esse tipo de amor que um relacionamento deve refletir. No seu namoro, é importante observar se a pessoa está disposta a se sacrificar por você, a abrir mão de pequenas coisas para o bem de ambos, a colocar o seu bem-estar à frente do próprio egoísmo. Isso não significa ceder em tudo, mas sim demonstrar cuidado e altruísmo. E, claro, isso vale para os dois. Pergunte-se também: eu estou disposto(a) a me sacrificar por essa pessoa, a colocá-la acima do meu orgulho?</p>
+
+            <h4>2. Cuidar e Proteger</h4>
+            <p>O versículo fala sobre o marido amar a esposa como ama o próprio corpo. Isso é profundo, porque ninguém maltrata o próprio corpo intencionalmente. Pelo contrário, a gente cuida, protege, dá o melhor para o nosso bem-estar. Esse princípio se aplica ao relacionamento também. Você precisa estar com alguém que cuida de você. Isso não quer dizer que a pessoa vai sempre acertar, mas que ela faz o esforço para estar presente nos momentos em que você precisa de apoio, de conforto, ou até de um conselho sincero. Cuidar é algo que vai além de palavras bonitas – é ação. Peça clareza, transformação pessoal e paz, confiando que Deus responderá no tempo certo.</p>
+
+            <h4>3. Respeito Mútuo</h4>
+            <p>Esse amor, conforme descrito em Efésios, é baseado no respeito. Não é um amor controlador, que exige ou força a outra pessoa a fazer o que você quer. Pelo contrário, é um amor que respeita a individualidade do outro, valoriza suas opiniões e entende que, no relacionamento, ambos têm voz. Se você perceber que seu parceiro(a) está sempre tentando impor suas vontades, sem considerar o que você sente ou pensa, isso pode ser um sinal de alerta. O relacionamento que agrada a Deus tem base em respeito mútuo, onde os dois se apoiam e ouvem um ao outro.</p>
+
+            <h4>4. Comparando as Qualidades Bíblicas com a Realidade</h4>
+            <div class="list-box">
+                <p>Aqui estão algumas perguntas para reflexão:</p>
+                <ul>
+                    <li>**Ele/ela demonstra um amor altruísta?** A pessoa está disposta a fazer sacrifícios por você? Isso pode ser algo simples, como abrir mão de um tempo pessoal para estar com você em um momento difícil.</li>
+                    <li>**O respeito é genuíno?** O seu parceiro te ouve? Ele valoriza suas opiniões e faz questão de respeitar seus limites e desejos? Respeito não é só concordar sempre, mas valorizar quem você é.</li>
+                    <li>**Há cuidado e proteção no relacionamento?** Você se sente cuidada emocional e espiritualmente? A pessoa se preocupa com o seu bem-estar, não só físico, mas também mental e espiritual?</li>
+                    <li>**Vocês compartilham o mesmo objetivo de crescimento?** A pessoa te incentiva a se aproximar de Deus? Um relacionamento saudável vai sempre te ajudar a avançar espiritualmente, não te puxar para baixo.</li>
+                </ul>
+            </div>
+            
+            <h4>5. Refletindo o Amor de Cristo no Relacionamento</h4>
+            <p>Aqui estão algumas atitudes práticas para que vocês reflitam o amor de Cristo:</p>
+            <div class="list-box">
+                <ul>
+                    <li>**Perdoem rapidamente:** Conflitos vão acontecer, mas o perdão é essencial. Não guardem rancor, aprendam a perdoar como Cristo nos perdoou.</li>
+                    <li>**Orem juntos:** A oração em conjunto é uma forma de unificar o relacionamento em Deus e buscar direção para os desafios que enfrentam.</li>
+                    <li>**Sirvam um ao outro:** Em pequenos gestos, demonstrem serviço. Isso pode ser uma ajuda no dia a dia, uma palavra de encorajamento, ou simplesmente estar disponível.</li>
+                </ul>
+            </div>
+            <p>Uma coisa é certa: nenhum de nós é perfeito, e ninguém vai atender a esses padrões 100% do tempo. Mas o que importa é a disposição de ambos em tentar. O amor de Cristo é um modelo, e o relacionamento cristão deve ser um reflexo desse amor. Vocês devem buscar crescer juntos, sempre se esforçando para viver esse padrão de cuidado, sacrifício e respeito.</p>
+            
+            <h4>6. Escolhendo Alguém com Qualidades de um Cônjuge Bíblico</h4>
+            <p>Quando você está em um relacionamento ou pensando em iniciar um, não é apenas sobre se a pessoa é atraente ou faz você rir. É sobre se essa pessoa reflete o caráter de Cristo nas suas atitudes diárias. Alguém que busca ser como Cristo é alguém com quem vale a pena construir uma vida. Por isso, observe se o seu parceiro ou parceira busca esses princípios de Efésios: amor sacrificial, cuidado, respeito e proteção. Se essas qualidades estão presentes, você está em um caminho sólido para um relacionamento que honre a Deus.</p>
+
+            <p><strong>Conclusão:</strong> Comparar as qualidades de um parceiro ou parceira com os padrões bíblicos não é sobre julgar ou impor expectativas impossíveis. É sobre buscar o melhor para o seu futuro, alguém que vai te ajudar a caminhar mais perto de Deus e construir uma vida baseada no amor de Cristo. O relacionamento cristão não é isento de dificuldades, mas, quando fundado em princípios bíblicos como os de Efésios 5:25-28, ele se torna uma jornada em que o amor, o respeito e o cuidado são as bases. Lembre-se de que você merece estar com alguém que, assim como você, busca refletir o amor de Cristo.</p>
+        </div>
+
+        <div class="page-section">
+            <h3>Capítulo 4: Busque Conselho de Líderes Espirituais</h3>
+            <p>Quando você está começando um relacionamento, há uma coisa que pode te salvar de muitos erros: pedir conselhos. Em especial, conselhos de quem já caminhou nessa estrada e tem a experiência espiritual e a sabedoria para te guiar. E, vamos combinar, ninguém melhor do que os líderes espirituais – pastores, mentores e pessoas que você confia – para te ajudar a tomar decisões fundamentadas. Em Provérbios 15:22, a Bíblia nos alerta sobre a importância de buscar conselho:</p>
+            
+            <blockquote>"Os planos fracassam por falta de conselho, mas são bem-sucedidos quando há muitos conselheiros." – Provérbios 15:22</blockquote>
+
+            <h4>1. Por que Buscar Conselho de Líderes Espirituais?</h4>
+            <p>A gente vive numa época em que todo mundo parece ter uma opinião sobre tudo, não é? Redes sociais, amigos, familiares – todos acham que sabem o que é melhor para você. Mas quando se trata de algo tão importante quanto um relacionamento, quem você vai escutar faz toda a diferença. Líderes espirituais têm uma sabedoria que vai além do simples “achismo”. Eles baseiam seus conselhos na Palavra de Deus e na experiência acumulada de anos orientando outros casais e indivíduos. Eles estão ali para te guiar com um olhar espiritual e, principalmente, te ajudar a discernir a vontade de Deus no seu relacionamento.</p>
+
+            <h4>2. Evitando Decisões Apressadas</h4>
+            <p>Quantas vezes você já tomou uma decisão impulsiva, sem pensar direito, e depois se arrependeu? Isso acontece muito em relacionamentos! A empolgação no início de um namoro pode nos cegar para aspectos importantes que a gente deveria considerar. Ao buscar o conselho de um líder espiritual, você tem a oportunidade de parar, respirar e refletir antes de seguir adiante. Eles podem te ajudar a ver coisas que você talvez não esteja enxergando – seja por estar apaixonado ou ansioso para que as coisas deem certo. Um bom conselho pode evitar muitos erros futuros.</p>
+
+            <h4>3. O Que Considerar ao Buscar Conselhos?</h4>
+            <p>Agora, você pode estar se perguntando: "Como eu sei que estou buscando o conselho certo e de quem devo ouvir?" Aqui vão algumas dicas práticas para te ajudar a buscar e aplicar conselhos de líderes espirituais:</p>
+            <div class="list-box">
+                <ol type="a">
+                    <li>**Procure Alguém com Sabedoria Espiritual:** Não é qualquer pessoa que pode dar um bom conselho. Busque alguém que vive o que prega e tem uma caminhada sólida com Deus. Um líder espiritual que você vê buscando a vontade de Deus em sua própria vida é mais capaz de te orientar da mesma forma.</li>
+                    <li>**Esteja Aberto(a) a Ouvir o Que Precisa, Não o Que Quer:** Às vezes, a gente só quer ouvir o que confirma nossos próprios desejos, mas é essencial estar aberto(a) à correção. Um bom líder espiritual vai te dizer a verdade, mesmo que ela seja desconfortável. Eles não estão ali para te agradar, mas para te ajudar a seguir o caminho certo.</li>
+                    <li>**Compartilhe com Honestidade:** Para que o conselho seja útil, você precisa ser honesto(a) sobre sua situação. Conte seus medos, suas dúvidas e até os problemas que possam existir no relacionamento. Quanto mais sincero(a) você for, mais direcionado será o conselho.</li>
+                </ol>
+            </div>
+
+            <h4>4. Conselhos que Podem Fortalecer seu Relacionamento</h4>
+            <p>Os líderes espirituais podem te oferecer uma visão mais profunda sobre o que Deus espera do seu relacionamento. Aqui estão algumas áreas em que o conselho deles pode fazer toda a diferença:</p>
+            <div class="list-box">
+                <ul>
+                    <li>**Discernimento Espiritual:** Eles podem te ajudar a entender o que Deus está dizendo sobre o relacionamento. Muitas vezes, a gente está tão envolvido emocionalmente que não consegue perceber os sinais de Deus.</li>
+                    <li>**Identificação de Sinais de Alerta:** Os líderes espirituais têm a experiência de identificar padrões de comportamento que podem ser problemáticos a longo prazo. Se eles perceberem que algo não está de acordo com os princípios de Deus, eles podem te alertar sobre isso.</li>
+                    <li>**Apoio na Jornada Espiritual:** Mais do que apenas dar conselhos práticos, eles te incentivam a crescer espiritualmente dentro do relacionamento. Isso inclui orar juntos, estudar a Bíblia, e até buscar ministérios em que possam servir juntos.</li>
+                </ul>
+            </div>
+
+            <h4>5. Histórias de Casais que Buscam Conselhos</h4>
+            <p>Muitos casais cristãos que hoje têm um casamento sólido começaram seu relacionamento buscando orientação espiritual. Eles ouviram conselhos, aceitaram ser mentorados por pastores e mentores, e se permitiram crescer juntos com base nos princípios bíblicos. Isso fez toda a diferença na forma como enfrentaram os desafios e tomaram decisões importantes, como o momento certo de dar o próximo passo no relacionamento ou o ajuste em atitudes que precisavam mudar.</p>
+
+            <h4>6. O Que Fazer Quando o Conselho é Difícil de Ouvir?</h4>
+            <p>Nem sempre o conselho vai ser fácil de digerir. Pode ser que o seu líder espiritual identifique algo que você preferia ignorar, como um padrão de comportamento negativo ou até um relacionamento que não parece estar alinhado com os planos de Deus para sua vida. E o que fazer nesse momento? Lembre-se de que o conselho de um líder espiritual é dado com amor e responsabilidade. Eles estão ali para te ajudar a crescer e a evitar dores maiores no futuro. Se o conselho for difícil, ore e peça a Deus discernimento e humildade para seguir a direção que Ele está mostrando.</p>
+            
+            <p><strong>Conclusão:</strong> Buscar o conselho de líderes espirituais não é sinal de fraqueza, mas de sabedoria. A Bíblia nos ensina que onde há conselho, há sucesso. Então, por que não utilizar esse recurso valioso para guiar seus passos em algo tão importante quanto um relacionamento? Lembre-se: você não precisa caminhar sozinho(a). Deus colocou pessoas ao seu redor, capacitadas para te ajudar a tomar decisões sábias. Abra o coração, busque esses conselhos e confie que, com a orientação divina, você estará no caminho certo para construir um relacionamento abençoado e saudável.</p>
+        </div>
+
+        <div class="final-placeholder">
+            <h3>PRÓXIMOS CAPÍTULOS (EM BREVE)</h3>
+            <p><strong>FALTAM:</strong></p>
+            <ul>
+                <li>Capítulo 5: Busque a Orientação Bíblica para o Papel de Cada Um</li>
+                <li>Capítulo 6: Cultive uma Comunicação Honesta</li>
+                <li>Capítulo 7: (O último passo)</li>
+                <li>Conclusão Final do Livro</li>
+            </ul>
+            <p>Quando estiver satisfeito com o visual, me envie o texto do Capítulo 5 para continuarmos a montagem!</p>
+        </div>
+
     </div>
 
     <script>
