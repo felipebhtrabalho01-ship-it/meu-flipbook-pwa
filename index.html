@@ -6,45 +6,44 @@
     <title>Meu Catálogo Flipbook PWA</title>
     
     <link rel="manifest" href="/manifest.json" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/4.1.0/turn.min.js"></script>
 
     <style>
-        /* CSS básico para ver as páginas */
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+        }
+        #flipbook-container {
+            display: flex;
+            width: 900px; /* Largura total do livro aberto */
+            height: 600px; /* Altura do livro */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
         .page {
-            width: 100%;
+            width: 50%; /* Cada página ocupa metade do contêiner */
             height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #f0f0f0;
             border: 1px solid #ccc;
             font-size: 24px;
+            box-sizing: border-box;
+            background-color: white;
+            padding: 20px;
         }
     </style>
 </head>
 <body>
 
-    <div id="flipbook">
-        <div class="page page-cover" style="background-color: #ffcc00;">CAPA</div>
-        <div class="page page-1">PÁGINA 1</div>
-        <div class="page page-2">PÁGINA 2</div>
-        <div class="page page-3">PÁGINA 3</div>
-        <div class="page page-back" style="background-color: #ffcc00;">CONTRA-CAPA</div>
-    </div>
+    <div id="flipbook-container">
+        <div class="page page-left" style="background-color: #ffcc00;">CAPA</div>
+        <div class="page page-right">PÁGINA 1</div>
+        </div>
 
     <script>
-    // 1. Inicializa o Turn.js e transforma o div em livro
-    // Este bloco só é executado quando a página está pronta
-    $(document).ready(function() {
-        $('#flipbook').turn({
-            width: 800,
-            height: 600,
-            autoCenter: true
-        });
-    });
-
-    // 2. Registra o Service Worker (para o PWA)
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('/sw.js')
