@@ -6,23 +6,32 @@
     <title>Meu Catálogo Flipbook PWA</title>
     
     <link rel="manifest" href="/manifest.json" />
-    <script type="module" src="https://unpkg.com/page-flip@2.1.0/dist/page-flip.module.js"></script>
+    
+    <link rel="stylesheet" href="https://unpkg.com/page-flip@2.1.0/css/page-flip.css">
+    
+    <script src="https://unpkg.com/page-flip@2.1.0/dist/page-flip.min.js"></script>
 
     <style>
+        /* CSS para posicionar o flipbook no centro da tela */
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+        }
+        /* O estilo "page" é usado pela biblioteca */
         .page {
-            width: 50%; /* Essencial para a biblioteca */
+            width: 100%; 
             height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #f0f0f0;
-            border: 1px solid #ccc;
             font-size: 24px;
             /* Garante que o flipbook ocupe a tela */
-            position: absolute; 
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            position: relative; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
@@ -30,13 +39,13 @@
 
     <div id="flipbook">
         <div class="page page-cover" style="background-color: #ffcc00;">CAPA</div>
-        <div class="page page-1">PÁGINA 1</div>
-        <div class="page page-2">PÁGINA 2</div>
-        <div class="page page-3">PÁGINA 3</div>
+        <div class="page page-1" style="background-color: white;">PÁGINA 1</div>
+        <div class="page page-2" style="background-color: #f9f9f9;">PÁGINA 2</div>
+        <div class="page page-3" style="background-color: white;">PÁGINA 3</div>
         <div class="page page-back" style="background-color: #ffcc00;">CONTRA-CAPA</div>
     </div>
 
-    <script type="module">
+    <script>
     // 1. Inicializa o Page Flip (JS PURO)
     document.addEventListener('DOMContentLoaded', function() {
         const flipBook = new PageFlip(
