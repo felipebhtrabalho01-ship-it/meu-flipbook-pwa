@@ -6,44 +6,53 @@
     <title>Meu Catálogo Flipbook PWA</title>
     
     <link rel="manifest" href="/manifest.json" />
+    <script type="module" src="https://unpkg.com/page-flip@2.1.0/dist/page-flip.module.js"></script>
 
     <style>
-        body {
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: #f0f0f0;
-        }
-        #flipbook-container {
-            display: flex;
-            width: 900px; /* Largura total do livro aberto */
-            height: 600px; /* Altura do livro */
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
         .page {
-            width: 50%; /* Cada página ocupa metade do contêiner */
+            width: 50%; /* Essencial para a biblioteca */
             height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
+            background-color: #f0f0f0;
             border: 1px solid #ccc;
             font-size: 24px;
-            box-sizing: border-box;
-            background-color: white;
-            padding: 20px;
+            /* Garante que o flipbook ocupe a tela */
+            position: absolute; 
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
     </style>
 </head>
 <body>
 
-    <div id="flipbook-container">
-        <div class="page page-left" style="background-color: #ffcc00;">CAPA</div>
-        <div class="page page-right">PÁGINA 1</div>
-        </div>
+    <div id="flipbook">
+        <div class="page page-cover" style="background-color: #ffcc00;">CAPA</div>
+        <div class="page page-1">PÁGINA 1</div>
+        <div class="page page-2">PÁGINA 2</div>
+        <div class="page page-3">PÁGINA 3</div>
+        <div class="page page-back" style="background-color: #ffcc00;">CONTRA-CAPA</div>
+    </div>
 
+    <script type="module">
+    // 1. Inicializa o Page Flip (JS PURO)
+    document.addEventListener('DOMContentLoaded', function() {
+        const flipBook = new PageFlip(
+            document.getElementById("flipbook"),
+            {
+                width: 600,
+                height: 800,
+                showCover: true
+            }
+        );
+        flipBook.loadFromHtml(document.querySelectorAll(".page"));
+    });
+    </script>
+    
     <script>
+    // 2. Registra o Service Worker (PWA)
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('/sw.js')
