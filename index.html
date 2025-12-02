@@ -14,14 +14,16 @@
             --deep-blue: #004C8C; /* Azul Profundo para o fundo da Capa */
             --light-cream: #FFFBEB; /* Creme claro para caixas de citação */
             --text-color: #1a1a1a; 
+            --modern-font: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Fonte moderna para o corpo */
+            --classic-font: 'Times New Roman', Times, serif; /* Fonte elegante para títulos */
         }
 
         /* Estilos de Tipografia e Layout (Leitura de Ebook) */
         body {
-            font-family: Georgia, 'Times New Roman', Times, serif; /* Fonte Clássica de Ebook */
-            background-color: #f7f7f7; /* Fundo levemente off-white */
+            font-family: var(--modern-font); /* MUDANÇA: Fonte Moderna para o corpo */
+            background-color: #f7f7f7; 
             color: var(--text-color); 
-            line-height: 1.8; /* Espaçamento de linha alto para conforto visual */
+            line-height: 1.8; 
             margin: 0;
             padding: 0;
             display: flex;
@@ -31,39 +33,51 @@
         /* Contêiner de Leitura (Simulando a tela de um leitor) */
         #ebook-reader {
             width: 100%;
-            max-width: 760px; /* Largura ideal para leitura confortável */
+            max-width: 760px; 
             margin: 40px auto;
             padding: 50px;
             background-color: white;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); /* Sombra mais profissional */
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); 
             border-radius: 8px;
         }
 
         /* Estilos de Conteúdo */
         h1 {
-            font-family: 'Times New Roman', Times, serif; /* Fonte Clássica e Elegante */
+            font-family: var(--classic-font); /* Fonte Clássica e Elegante */
             color: var(--accent-gold); 
             border-bottom: 3px solid #eee;
             padding-bottom: 20px;
             text-align: center;
             font-size: 2.8em;
-            font-weight: 700; /* Mais impacto visual */
+            font-weight: 700; 
         }
         
         h3 {
-            font-family: 'Times New Roman', Times, serif; /* Fonte Clássica e Elegante */
+            font-family: var(--classic-font); /* Fonte Clássica e Elegante */
             color: #333;
-            border-bottom: 2px solid var(--accent-gold); /* Destaque em ouro */
+            border-bottom: 2px solid var(--accent-gold); 
             padding-bottom: 10px;
             margin-top: 40px;
             font-size: 1.5em;
         }
 
         h4 {
-            font-family: sans-serif; /* Subtítulos mais limpos */
+            font-family: var(--modern-font); /* Subtítulos mais limpos */
             color: var(--accent-gold); 
             margin-top: 30px;
             font-size: 1.2em;
+        }
+
+        /* NOVO ESTILO: Parágrafo de Introdução (para quebrar a secura) */
+        .chapter-intro {
+            font-size: 1.3em; 
+            font-weight: 500;
+            line-height: 1.4;
+            color: #444; 
+            margin-top: 10px;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 1px dotted #ccc;
         }
 
         p {
@@ -73,8 +87,8 @@
         }
         
         blockquote {
-            background-color: var(--light-cream); /* Fundo creme/luz */
-            border-left: 6px solid var(--accent-gold); /* Borda em Ouro */
+            background-color: var(--light-cream); 
+            border-left: 6px solid var(--accent-gold); 
             margin: 2em 0;
             padding: 15px 25px;
             font-style: italic;
@@ -83,17 +97,17 @@
         }
 
         .cover {
-            background-color: var(--deep-blue); /* Azul Profundo da Capa */
-            color: var(--accent-gold); /* Texto em Ouro */
+            background-color: var(--deep-blue); 
+            color: var(--accent-gold); 
             padding: 80px 0;
             margin: -50px -50px 50px -50px;
             font-size: 2.2em;
             line-height: 1.3;
             text-align: center;
             border-radius: 8px 8px 0 0;
-            font-family: 'Times New Roman', Times, serif;
+            font-family: var(--classic-font);
             font-weight: 700;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Sombra no texto */
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); 
         }
         .page-section { 
             margin-bottom: 30px; 
@@ -117,7 +131,7 @@
         .final-message {
             text-align: center;
             padding: 40px 0;
-            border-top: 2px solid var(--accent-gold); /* Ouro no separador final */
+            border-top: 2px solid var(--accent-gold); 
             margin-top: 50px;
             font-size: 1.3em;
             font-style: italic;
