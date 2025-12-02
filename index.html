@@ -3,79 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Catálogo Flipbook PWA</title>
+    <title>Ebook Estilo Leitor Digital PWA</title>
     
     <link rel="manifest" href="/manifest.json" />
-    
-    <link rel="stylesheet" href="https://unpkg.com/page-flip@2.1.0/css/page-flip.css">
-    
-    <script src="https://unpkg.com/page-flip@2.1.0/dist/page-flip.min.js"></script>
 
     <style>
-        /* Estilos básicos para o Flipbook aparecer corretamente */
+        /* Estilos de Tipografia e Layout (Leitura de Ebook) */
         body {
+            font-family: Georgia, 'Times New Roman', Times, serif; /* Fonte Clássica de Ebook */
+            background-color: #f7f7f7; /* Fundo levemente off-white */
+            color: #1a1a1a; /* Cor de texto escura e suave */
+            line-height: 1.7; /* Espaçamento de linha alto para conforto visual */
             margin: 0;
+            padding: 0;
             display: flex;
             justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: #f0f0f0;
         }
-        .page {
-            width: 100%; 
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 24px;
-            box-sizing: border-box;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            /* Garante que o texto fique centralizado */
-            text-align: center; 
+
+        /* Contêiner de Leitura (Simulando a tela de um leitor) */
+        #ebook-reader {
+            width: 100%;
+            max-width: 760px; /* Largura ideal para leitura confortável */
+            margin: 40px auto;
+            padding: 50px;
+            background-color: white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+            border-radius: 8px;
+        }
+
+        /* Estilos de Conteúdo */
+        h1, h3 {
+            font-family: sans-serif;
+            color: #333;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 1.5em;
+            text-align: justify; /* Justifica o texto como em um livro */
+            font-size: 1.1em;
+        }
+
+        .cover {
+            background-color: #4CAF50;
+            color: white;
+            padding: 80px 0;
+            margin: -50px -50px 50px -50px; /* Extende para a borda do contêiner */
+            font-size: 2.5em;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+        
+        /* Estilos para o PWA no modo offline */
+        /* Para simular a navegação em um ebook de verdade, o usuário rola a página */
+        .page { 
+            margin-bottom: 30px; 
+            padding: 20px 0;
+            border-top: 1px dashed #eee;
         }
     </style>
 </head>
 <body>
 
-    <div id="flipbook">
-        <div class="page page-cover" style="background-color: #ffcc00;">CAPA</div>
-        <div class="page page-1" style="background-color: white;">PÁGINA 1</div>
-        <div class="page page-2" style="background-color: #f9f9f9;">PÁGINA 2</div>
-        <div class="page page-3" style="background-color: white;">PÁGINA 3</div>
-        <div class="page page-back" style="background-color: #ffcc00;">CONTRA-CAPA</div>
+    <div id="ebook-reader">
+        <div class="cover">SEU EBOOK PROFISSIONAL</div>
+        
+        <div class="page page-1">
+            <h3>PÁGINA 1: Introdução</h3>
+            <p>Este layout foi desenhado para ser o mais confortável possível para a leitura, simulando a experiência de um leitor de ebook (como um Kindle ou Kobo). A fonte, o espaçamento entre linhas e a largura do texto foram otimizados.</p>
+            <p>Seu PWA continua funcional e, ao ser instalado no celular, terá uma aparência limpa e focada no conteúdo, como um aplicativo de leitura.</p>
+        </div>
+
+        <div class="page page-2">
+            <h3>PÁGINA 2: O Novo Visual</h3>
+            <p>Ajustamos o CSS para que a tipografia e o layout fossem priorizados, resolvendo a falha dos códigos externos. Agora, o foco é na entrega do seu conteúdo de forma elegante.</p>
+            <p>Você pode adicionar todo o seu texto aqui. O conteúdo simplesmente fluirá para baixo, como um site moderno e focado.</p>
+        </div>
+
+        <div class="page page-back">
+            <h3>FIM DO LIVRO</h3>
+            <p>Obrigado pela leitura!</p>
+        </div>
     </div>
 
     <script>
-    // Inicializa o Page Flip
-    document.addEventListener('DOMContentLoaded', function() {
-        // Verifica se a classe PageFlip está definida
-        if (typeof PageFlip !== 'undefined') {
-            const flipBook = new PageFlip(
-                document.getElementById("flipbook"),
-                {
-                    width: 600,
-                    height: 800,
-                    showCover: true
-                }
-            );
-            flipBook.loadFromHtml(document.querySelectorAll(".page"));
-        } else {
-            console.error("A biblioteca PageFlip não foi carregada.");
-        }
-    });
-    </script>
-    
-    <script>
-    // Registra o Service Worker (PWA)
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js')
-          .then(registration => {
-            console.log('PWA OK! Service Worker registrado.');
-          })
-          .catch(err => {
-            console.log('Falha no registro do Service Worker:', err);
-          });
+        navigator.serviceWorker.register('/sw.js');
       });
     }
     </script>
